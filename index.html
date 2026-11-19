@@ -2,270 +2,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mods Site | _MC_MAN</title>
+<meta name="description" content="Minecraft mods created by _MC_MAN.">
 
-  <title>Mods Site | _MC_MAN</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <meta name="description" content="Discover Minecraft mods made by _MC_MAN.">
+html {
+  scroll-behavior: smooth;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #090710;
+  color: white;
+  line-height: 1.6;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+header {
+  background: #100b19;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #39234d;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #090710;
-      color: white;
-      line-height: 1.6;
-    }
+.logo {
+  color: #bd78ff;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    header {
-      background: #100b19;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #39234d;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
-      color: #bd78ff;
-      letter-spacing: 2px;
-    }
+nav a:hover {
+  color: #bd78ff;
+}
 
-    nav a {
-      color: #eee;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.2s;
-    }
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: radial-gradient(ellipse, #42166b, #090710 75%);
+}
 
-    nav a:hover {
-      color: #bd78ff;
-    }
+.username {
+  color: #c58aff;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 20px #963cff;
+  margin-bottom: 15px;
+}
 
-    .profile {
-      padding: 35px 8% 10px;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-    .profile img {
-      display: block;
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      margin: auto;
-      border: 2px solid #923cff;
-      border-radius: 18px;
-      box-shadow: 0 0 35px #6325a8;
-    }
+.hero h1 span {
+  color: #c58aff;
+}
 
-    .username {
-      margin-top: 22px;
-      font-size: 35px;
-      font-weight: bold;
-      color: #c58aff;
-      text-shadow: 0 0 15px #963cff;
-    }
+.hero p {
+  color: #d0c5dc;
+  font-size: 17px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 75px 20px;
-      background: radial-gradient(ellipse, #351452, #090710 75%);
-    }
+.section {
+  padding: 55px 8%;
+}
 
-    .hero h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      margin-bottom: 15px;
-    }
+.section h2 {
+  color: #c58aff;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
 
-    .hero span {
-      color: #c58aff;
-    }
+.mod {
+  max-width: 680px;
+  padding: 30px;
+  background: linear-gradient(145deg, #1b1326, #100c17);
+  border: 1px solid #7444a0;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #35145255;
+}
 
-    .hero p {
-      color: #d0c5dc;
-      font-size: 17px;
-    }
+.mod h3 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
 
-    .section {
-      padding: 45px 8%;
-    }
+.mod p {
+  color: #d2c9dc;
+  margin-bottom: 15px;
+}
 
-    .section h2 {
-      color: #c58aff;
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
+.tag {
+  display: inline-block;
+  padding: 7px 13px;
+  margin: 5px 3px;
+  border-radius: 20px;
+  background: #302044;
+  color: #e0c4ff;
+  font-size: 13px;
+}
 
-    .mod {
-      max-width: 680px;
-      padding: 30px;
-      background: linear-gradient(145deg, #1b1326, #100c17);
-      border: 1px solid #7444a0;
-      border-radius: 16px;
-      box-shadow: 0 0 20px #35145255;
-    }
+.status {
+  color: #85e6a5 !important;
+  font-weight: bold;
+  margin-top: 18px;
+}
 
-    .mod h3 {
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
+.download {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 13px 23px;
+  background: #963cff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 9px;
+  transition: 0.2s;
+  box-shadow: 0 0 15px #963cff55;
+}
 
-    .mod p {
-      color: #d2c9dc;
-      margin-bottom: 15px;
-    }
+.download:hover {
+  background: #b46aff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px #963cff;
+}
 
-    .tag {
-      display: inline-block;
-      padding: 7px 13px;
-      margin: 5px 3px;
-      border-radius: 20px;
-      background: #302044;
-      color: #e0c4ff;
-      font-size: 13px;
-    }
+.about-text {
+  color: #c7bdd1;
+  max-width: 700px;
+}
 
-    .status {
-      color: #85e6a5 !important;
-      margin-top: 18px;
-      font-weight: bold;
-    }
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #999;
+  border-top: 1px solid #302039;
+  background: #100b19;
+}
 
-    .download {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 13px 23px;
-      background: #963cff;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 9px;
-      transition: 0.2s;
-      box-shadow: 0 0 15px #963cff55;
-    }
+footer span {
+  color: #bd78ff;
+}
 
-    .download:hover {
-      background: #b46aff;
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px #963cff;
-    }
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 
-    .about-text {
-      color: #c7bdd1;
-      max-width: 700px;
-    }
+  .hero h1 {
+    font-size: 30px;
+  }
 
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      color: #999;
-      border-top: 1px solid #302039;
-      background: #100b19;
-    }
+  .username {
+    font-size: 32px;
+  }
 
-    footer span {
-      color: #bd78ff;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        gap: 15px;
-      }
-
-      nav a {
-        margin-left: 10px;
-      }
-
-      .username {
-        font-size: 27px;
-      }
-
-      .mod {
-        padding: 22px;
-      }
-    }
-  </style>
+  .mod {
+    padding: 22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">MODS SITE</div>
+<header>
+  <div class="logo">MODS SITE</div>
+  <nav>
+    <a href="#mods">Mods</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="#mods">Mods</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
+<section class="hero">
+  <div class="username">_MC_MAN</div>
+  <h1>Discover Your Next <span>Minecraft Mod</span></h1>
+  <p>Explore amazing Minecraft mods made by creators.</p>
+</section>
 
-  <!-- MC_MAN Profile -->
-  <section class="profile">
-    <img src="mc-man.png" alt="Minecraft character of MC_MAN">
-    <div class="username">_MC_MAN</div>
-  </section>
+<section class="section" id="mods">
+  <h2>Featured Mods</h2>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Discover Your Next <span>Minecraft Mod</span></h1>
-    <p>Explore amazing Minecraft mods made by creators.</p>
-  </section>
+  <div class="mod">
+    <h3>🟣 Pearl Rider</h3>
 
-  <!-- Mods -->
-  <section class="section" id="mods">
-    <h2>Featured Mods</h2>
-
-    <div class="mod">
-      <h3>🟣 Pearl Rider</h3>
-
-      <p>
-        Ride an Ender Pearl and take your pearl movement
-        experiments to the next level!
-      </p>
-
-      <span class="tag">Fabric</span>
-      <span class="tag">Minecraft 1.21.11</span>
-      <span class="tag">Movement</span>
-
-      <p class="status">
-        Version 1.0.0 — Released!
-      </p>
-
-      <a
-        class="download"
-        href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar"
-      >
-        ⬇ Download Pearl Rider
-      </a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section" id="about">
-    <h2>About Me</h2>
-
-    <p class="about-text">
-      Welcome to Mods Site!
-      This website is created by _MC_MAN.
-      Discover Minecraft mods and new projects here.
+    <p>
+      Ride an Ender Pearl and take your pearl movement
+      experiments to the next level!
     </p>
-  </section>
 
-  <footer>
-    © 2026 Mods Site | Created by <span>_MC_MAN</span>
-  </footer>
+    <span class="tag">Fabric</span>
+    <span class="tag">Minecraft 1.21.11</span>
+    <span class="tag">Movement</span>
+
+    <p class="status">Version 1.0.0 — Released!</p>
+
+    <a class="download"
+       href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar">
+       ⬇ Download Pearl Rider
+    </a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>About Me</h2>
+  <p class="about-text">
+    Welcome to Mods Site!
+    This website is created by _MC_MAN.
+    Discover Minecraft mods and new projects here.
+  </p>
+</section>
+
+<footer>
+  © 2026 Mods Site | Created by <span>_MC_MAN</span>
+</footer>
 
 </body>
 </html>
