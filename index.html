@@ -4,19 +4,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mods Site</title>
+
+<title>Mods Site | mahanx18090</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #090710;
   color: white;
+  overflow-x: hidden;
 }
 
 header {
+  position: relative;
+  z-index: 5;
   padding: 22px 7%;
   border-bottom: 1px solid #30203f;
   display: flex;
@@ -24,12 +34,14 @@ header {
   align-items: center;
   flex-wrap: wrap;
   gap: 18px;
+  background: #0d0915;
 }
 
 .logo {
   color: #bd78ff;
   font-size: 25px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .languages {
@@ -45,50 +57,87 @@ header {
   padding: 9px 13px;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.languages button:hover {
+  background: #593078;
 }
 
 .languages button.active {
   background: #963cff;
+  border-color: #c58aff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 nav a {
   color: #ddd;
   text-decoration: none;
-  margin: 8px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #bd78ff;
 }
 
 .hero {
   text-align: center;
-  padding: 90px 20px;
-  background: radial-gradient(ellipse, #42166b, #090710 72%);
+  padding: 110px 20px;
+  background:
+    radial-gradient(ellipse at center, #42166b, #090710 72%);
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: clamp(30px, 6vw, 48px);
+  margin-bottom: 15px;
 }
 
-.hero span, .section h2 {
+.hero span {
   color: #c58aff;
 }
 
 .hero p {
   color: #d0c5dc;
+  font-size: 17px;
 }
 
 .section {
-  padding: 45px 8%;
+  padding: 55px 8%;
+}
+
+.section h2 {
+  color: #c58aff;
+  font-size: 27px;
 }
 
 .mod {
-  max-width: 650px;
+  max-width: 680px;
   padding: 28px;
   background: #17111f;
   border: 1px solid #7444a0;
   border-radius: 16px;
+  box-shadow: 0 0 25px #8536bd18;
+  transition: 0.25s;
+}
+
+.mod:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px #a34bff35;
 }
 
 .mod h3 {
-  font-size: 26px;
+  font-size: 27px;
+  margin-top: 0;
+}
+
+.mod p {
+  line-height: 1.7;
+  color: #ddd;
 }
 
 .tag {
@@ -104,49 +153,127 @@ nav a {
 .download {
   display: inline-block;
   margin-top: 18px;
-  padding: 13px 22px;
-  background: #963cff;
+  padding: 14px 23px;
+  background: linear-gradient(135deg, #963cff, #6720b0);
   color: white;
   text-decoration: none;
   font-weight: bold;
   border-radius: 9px;
+  transition: 0.2s;
 }
 
 .download:hover {
   background: #b46aff;
+  transform: scale(1.04);
 }
 
 .status {
-  color: #86e6a4;
+  color: #86e6a4 !important;
+  font-weight: bold;
+}
+
+.creator-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 680px;
+  padding: 25px;
+  background: #17111f;
+  border: 1px solid #7444a0;
+  border-radius: 16px;
+}
+
+.creator-skin {
+  display: block;
+  width: 170px;
+  height: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px #a34bff55);
+}
+
+.creator-info h3 {
+  color: #d5a8ff;
+  font-size: 25px;
+}
+
+.creator-info p {
+  color: #c9bfd3;
+  line-height: 1.7;
+}
+
+.creator-label {
+  color: #a969e7;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.about-text {
+  color: #c9bfd3;
+  line-height: 1.8;
+  max-width: 650px;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 32px 15px;
   color: #999;
   border-top: 1px solid #30203f;
+  line-height: 1.8;
 }
+
+/* Persian layout */
 
 body.rtl {
   direction: rtl;
   text-align: right;
 }
 
-body.rtl header {
+body.rtl .creator-card {
   flex-direction: row;
-}
-
-body.rtl nav a {
-  margin: 8px;
 }
 
 body.rtl .languages {
   direction: ltr;
 }
 
-@media(max-width:600px) {
-  .hero h1 { font-size: 30px; }
-  header { justify-content: center; }
+body.rtl .mod,
+body.rtl .creator-card {
+  text-align: right;
+}
+
+/* Small screens */
+
+@media(max-width: 650px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 75px 15px;
+  }
+
+  .creator-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  body.rtl .creator-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .creator-skin {
+    height: 210px;
+  }
+
+  .section {
+    padding: 35px 6%;
+  }
 }
 </style>
 </head>
@@ -154,29 +281,53 @@ body.rtl .languages {
 <body>
 
 <header>
+
   <div class="logo">MODS SITE</div>
 
   <div class="languages">
-    <button class="active" onclick="setLanguage('en')">🇬🇧 English</button>
-    <button onclick="setLanguage('fn')">فینگلیش</button>
-    <button onclick="setLanguage('fa')">🇮🇷 فارسی</button>
+    <button type="button" class="active" onclick="setLanguage('en')">
+      🇬🇧 English
+    </button>
+
+    <button type="button" onclick="setLanguage('fn')">
+      Finglish
+    </button>
+
+    <button type="button" onclick="setLanguage('fa')">
+      🇮🇷 فارسی
+    </button>
   </div>
 
   <nav>
     <a href="#mods" data-i="mods">Mods</a>
+    <a href="#creator" data-i="creator">Creator</a>
     <a href="#about" data-i="about">About</a>
   </nav>
+
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
-  <h1 data-i="hero">Discover Your Next Minecraft Mod</h1>
-  <p data-i="subtitle">Explore amazing Minecraft mods made by creators.</p>
+
+  <h1 data-i="hero">
+    Discover Your Next Minecraft Mod
+  </h1>
+
+  <p data-i="subtitle">
+    Explore amazing Minecraft mods made by creators.
+  </p>
+
 </section>
 
+<!-- MODS -->
+
 <section class="section" id="mods">
+
   <h2 data-i="featured">Featured Mods</h2>
 
   <div class="mod">
+
     <h3>🟣 Pearl Rider</h3>
 
     <p data-i="description">
@@ -184,100 +335,401 @@ body.rtl .languages {
     </p>
 
     <span class="tag">Fabric</span>
+
     <span class="tag">Minecraft 1.21.11</span>
+
     <span class="tag" data-i="movement">Movement</span>
 
-    <p class="status" data-i="status">Version 1.0.0 — Released!</p>
+    <p class="status" data-i="status">
+      Version 1.0.0 — Released!
+    </p>
 
-    <a class="download"
-       href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar"
-       data-i="download">
-       ⬇ Download Pearl Rider
+    <a
+      class="download"
+      href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar"
+      data-i="download"
+    >
+      ⬇ Download Pearl Rider
     </a>
+
   </div>
+
 </section>
+
+<!-- CREATOR -->
+
+<section class="section" id="creator">
+
+  <h2 data-i="creatorTitle">Creator</h2>
+
+  <div class="creator-card">
+
+    <img
+      class="creator-skin"
+      src="https://mc-heads.net/player/mahanx18090"
+      alt="Minecraft skin of mahanx18090"
+      loading="lazy"
+      onerror="this.onerror=null; this.src='https://mc-heads.net/avatar/mahanx18090/160'"
+    >
+
+    <div class="creator-info">
+
+      <div class="creator-label" data-i="creatorLabel">
+        MOD DEVELOPER
+      </div>
+
+      <h3>mahanx18090</h3>
+
+      <p data-i="creatorText">
+        Creator of Pearl Rider and Mods Site.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
 
 <section class="section" id="about">
+
   <h2 data-i="aboutTitle">About Mods Site</h2>
-  <p data-i="aboutText">
+
+  <p class="about-text" data-i="aboutText">
     A Minecraft mod showcase created by mahanx18090.
   </p>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer data-i="footer">
   © 2026 Mods Site | Created by mahanx18090
 </footer>
 
+<!-- LANGUAGE SYSTEM -->
+
 <script>
+
 const translations = {
+
   en: {
     mods: "Mods",
+    creator: "Creator",
     about: "About",
+
     hero: "Discover Your Next Minecraft Mod",
     subtitle: "Explore amazing Minecraft mods made by creators.",
+
     featured: "Featured Mods",
-    description: "Ride an Ender Pearl and take your pearl movement experiments to the next level!",
+
+    description:
+      "Ride an Ender Pearl and take your pearl movement experiments to the next level!",
+
     movement: "Movement",
+
     status: "Version 1.0.0 — Released!",
+
     download: "⬇ Download Pearl Rider",
+
+    creatorTitle: "Creator",
+    creatorLabel: "MOD DEVELOPER",
+
+    creatorText:
+      "Creator of Pearl Rider and Mods Site.",
+
     aboutTitle: "About Mods Site",
-    aboutText: "A Minecraft mod showcase created by mahanx18090.",
-    footer: "© 2026 Mods Site | Created by mahanx18090"
+
+    aboutText:
+      "A Minecraft mod showcase created by mahanx18090.",
+
+    footer:
+      "© 2026 Mods Site | Created by mahanx18090"
   },
 
   fa: {
     mods: "مودها",
+    creator: "سازنده",
     about: "درباره ما",
+
     hero: "مود بعدی ماینکرفت خودت را پیدا کن",
-    subtitle: "مودهای فوق‌العاده ماینکرفت را کشف کن.",
+
+    subtitle:
+      "مودهای فوق‌العاده ماینکرفت را کشف کن.",
+
     featured: "مودهای ویژه",
-    description: "سوار اندرپرل شو و تجربه حرکت با پرل را به سطح جدیدی ببر!",
+
+    description:
+      "سوار اندرپرل شو و تجربه حرکت با پرل را به سطح جدیدی ببر!",
+
     movement: "حرکت",
+
     status: "نسخه 1.0.0 — منتشر شده!",
+
     download: "⬇ دانلود Pearl Rider",
+
+    creatorTitle: "سازنده سایت",
+
+    creatorLabel: "توسعه‌دهنده مود",
+
+    creatorText:
+      "سازنده Pearl Rider و سایت Mods Site.",
+
     aboutTitle: "درباره Mods Site",
-    aboutText: "نمایشگاهی از مودهای ماینکرفت ساخته شده توسط mahanx18090.",
-    footer: "© 2026 Mods Site | ساخته شده توسط mahanx18090"
+
+    aboutText:
+      "نمایشگاهی از مودهای ماینکرفت ساخته شده توسط mahanx18090.",
+
+    footer:
+      "© 2026 Mods Site | ساخته شده توسط mahanx18090"
   },
 
   fn: {
     mods: "Mod Ha",
+    creator: "Sazande",
     about: "Darbare Ma",
-    hero: "Mod-e Baadi Minecraft-et Ra Peyda Kon",
-    subtitle: "Mod-haye Fogholade Minecraft Ra Kashf Kon.",
-    featured: "Mod-haye Vizhe",
-    description: "Savare Ender Pearl Sho Va Tajrobe-ye Harekat Ba Pearl Ra Be Sateh-e Jadid Bebo!",
-    movement: "Harekat",
-    status: "Version 1.0.0 — Montasher Shode!",
-    download: "⬇ Download Pearl Rider",
-    aboutTitle: "Darbare Mods Site",
-    aboutText: "Namayeshgahi Az Mod-haye Minecraft, Sakht-e mahanx18090.",
-    footer: "© 2026 Mods Site | Sakht-e mahanx18090"
+
+    hero:
+      "Mod-e Baadi Minecraft-et Ra Peyda Kon",
+
+    subtitle:
+      "Mod-haye Fogholade Minecraft Ra Kashf Kon.",
+
+    featured:
+      "Mod-haye Vizhe",
+
+    description:
+      "Savare Ender Pearl Sho Va Tajrobe-ye Harekat Ba Pearl Ra Be Sateh-e Jadid Bebo!",
+
+    movement:
+      "Harekat",
+
+    status:
+      "Version 1.0.0 — Montasher Shode!",
+
+    download:
+      "⬇ Download Pearl Rider",
+
+    creatorTitle:
+      "Sazande Site",
+
+    creatorLabel:
+      "MOD DEVELOPER",
+
+    creatorText:
+      "Sazande Pearl Rider Va Mods Site.",
+
+    aboutTitle:
+      "Darbare Mods Site",
+
+    aboutText:
+      "Namayeshgahi Az Mod-haye Minecraft, Sakht-e mahanx18090.",
+
+    footer:
+      "© 2026 Mods Site | Sakht-e mahanx18090"
   }
+
 };
 
 function setLanguage(lang) {
+
   const words = translations[lang];
 
   document.querySelectorAll("[data-i]").forEach(element => {
+
     const key = element.dataset.i;
+
     if (words[key]) {
       element.textContent = words[key];
     }
+
   });
 
-  document.documentElement.lang = lang === "fa" ? "fa" : "en";
-  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
-  document.body.classList.toggle("rtl", lang === "fa");
+  document.documentElement.lang =
+    lang === "fa" ? "fa" : "en";
+
+  document.documentElement.dir =
+    lang === "fa" ? "rtl" : "ltr";
+
+  document.body.classList.toggle(
+    "rtl",
+    lang === "fa"
+  );
 
   document.querySelectorAll(".languages button").forEach(button => {
     button.classList.remove("active");
   });
 
-  const buttons = document.querySelectorAll(".languages button");
-  const selected = lang === "en" ? 0 : lang === "fn" ? 1 : 2;
+  const buttons =
+    document.querySelectorAll(".languages button");
+
+  const selected =
+    lang === "en" ? 0 :
+    lang === "fn" ? 1 : 2;
+
   buttons[selected].classList.add("active");
+
 }
+
+</script>
+
+<!-- ENDER PEARL MOUSE PARTICLES -->
+
+<script>
+
+const pearlCanvas = document.createElement("canvas");
+
+pearlCanvas.style.cssText = `
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+`;
+
+document.body.appendChild(pearlCanvas);
+
+const pearlCtx = pearlCanvas.getContext("2d");
+
+const pearlParticles = [];
+
+function resizePearlCanvas() {
+
+  const dpr = Math.min(
+    window.devicePixelRatio || 1,
+    2
+  );
+
+  pearlCanvas.width =
+    window.innerWidth * dpr;
+
+  pearlCanvas.height =
+    window.innerHeight * dpr;
+
+  pearlCtx.setTransform(
+    dpr, 0, 0, dpr, 0, 0
+  );
+
+}
+
+window.addEventListener(
+  "resize",
+  resizePearlCanvas
+);
+
+resizePearlCanvas();
+
+window.addEventListener(
+  "pointermove",
+  function(event) {
+
+    for (let i = 0; i < 3; i++) {
+
+      pearlParticles.push({
+
+        x: event.clientX,
+        y: event.clientY,
+
+        vx: (Math.random() - 0.5) * 2.8,
+        vy: (Math.random() - 0.5) * 2.8,
+
+        life: 1,
+
+        size: Math.random() * 3 + 2,
+
+        rotation: Math.random() * Math.PI * 2
+
+      });
+
+    }
+
+    // Keep the particle count limited
+    if (pearlParticles.length > 180) {
+      pearlParticles.splice(
+        0,
+        pearlParticles.length - 180
+      );
+    }
+
+  }
+);
+
+function animatePearls() {
+
+  pearlCtx.clearRect(
+    0,
+    0,
+    window.innerWidth,
+    window.innerHeight
+  );
+
+  for (
+    let i = pearlParticles.length - 1;
+    i >= 0;
+    i--
+  ) {
+
+    const p = pearlParticles[i];
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    p.life -= 0.022;
+
+    p.size *= 0.995;
+
+    pearlCtx.beginPath();
+
+    pearlCtx.arc(
+      p.x,
+      p.y,
+      Math.max(0, p.size * p.life),
+      0,
+      Math.PI * 2
+    );
+
+    pearlCtx.fillStyle =
+      `rgba(190, 90, 255, ${p.life})`;
+
+    pearlCtx.shadowColor = "#b44cff";
+    pearlCtx.shadowBlur = 18;
+
+    pearlCtx.fill();
+
+    // Small glowing highlight
+    pearlCtx.beginPath();
+
+    pearlCtx.arc(
+      p.x - 1,
+      p.y - 1,
+      Math.max(0, p.size * p.life * 0.3),
+      0,
+      Math.PI * 2
+    );
+
+    pearlCtx.fillStyle =
+      `rgba(255, 255, 255, ${p.life})`;
+
+    pearlCtx.fill();
+
+    if (p.life <= 0) {
+
+      pearlParticles.splice(i, 1);
+
+    }
+
+  }
+
+  pearlCtx.shadowBlur = 0;
+
+  requestAnimationFrame(animatePearls);
+
+}
+
+animatePearls();
+
 </script>
 
 </body>
