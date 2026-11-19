@@ -1,37 +1,84 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mods Site | Minecraft Mods</title>
+<title>Mods Site</title>
+
 <style>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #090710;
   color: white;
 }
+
 header {
-  padding: 24px 8%;
+  padding: 22px 7%;
   border-bottom: 1px solid #30203f;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
-.logo { color: #bd78ff; font-size: 25px; font-weight: bold; }
-nav a { color: #ddd; text-decoration: none; margin-left: 20px; }
+
+.logo {
+  color: #bd78ff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.languages {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.languages button {
+  background: #241532;
+  border: 1px solid #71449b;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.languages button.active {
+  background: #963cff;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 8px;
+}
+
 .hero {
   text-align: center;
-  padding: 95px 20px;
+  padding: 90px 20px;
   background: radial-gradient(ellipse, #42166b, #090710 72%);
 }
-.hero h1 { font-size: 44px; }
-.hero span { color: #c58aff; }
-.hero p { color: #d0c5dc; }
-.section { padding: 45px 8%; }
-.section h2 { color: #c58aff; }
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero span, .section h2 {
+  color: #c58aff;
+}
+
+.hero p {
+  color: #d0c5dc;
+}
+
+.section {
+  padding: 45px 8%;
+}
+
 .mod {
   max-width: 650px;
   padding: 28px;
@@ -39,7 +86,11 @@ nav a { color: #ddd; text-decoration: none; margin-left: 20px; }
   border: 1px solid #7444a0;
   border-radius: 16px;
 }
-.mod h3 { font-size: 26px; }
+
+.mod h3 {
+  font-size: 26px;
+}
+
 .tag {
   display: inline-block;
   padding: 7px 12px;
@@ -49,6 +100,7 @@ nav a { color: #ddd; text-decoration: none; margin-left: 20px; }
   color: #e0c4ff;
   font-size: 13px;
 }
+
 .download {
   display: inline-block;
   margin-top: 18px;
@@ -59,54 +111,174 @@ nav a { color: #ddd; text-decoration: none; margin-left: 20px; }
   font-weight: bold;
   border-radius: 9px;
 }
-.download:hover { background: #b46aff; }
-.status { color: #86e6a4; }
+
+.download:hover {
+  background: #b46aff;
+}
+
+.status {
+  color: #86e6a4;
+}
+
 footer {
   text-align: center;
   padding: 30px;
   color: #999;
   border-top: 1px solid #30203f;
 }
+
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl header {
+  flex-direction: row;
+}
+
+body.rtl nav a {
+  margin: 8px;
+}
+
+body.rtl .languages {
+  direction: ltr;
+}
+
+@media(max-width:600px) {
+  .hero h1 { font-size: 30px; }
+  header { justify-content: center; }
+}
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo">MODS SITE</div>
+
+  <div class="languages">
+    <button class="active" onclick="setLanguage('en')">🇬🇧 English</button>
+    <button onclick="setLanguage('fn')">فینگلیش</button>
+    <button onclick="setLanguage('fa')">🇮🇷 فارسی</button>
+  </div>
+
   <nav>
-    <a href="#mods">Mods</a>
-    <a href="#about">About</a>
+    <a href="#mods" data-i="mods">Mods</a>
+    <a href="#about" data-i="about">About</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Discover Your Next <span>Minecraft Mod</span></h1>
-  <p>Explore amazing Minecraft mods made by creators.</p>
+  <h1 data-i="hero">Discover Your Next Minecraft Mod</h1>
+  <p data-i="subtitle">Explore amazing Minecraft mods made by creators.</p>
 </section>
 
 <section class="section" id="mods">
-  <h2>Featured Mods</h2>
+  <h2 data-i="featured">Featured Mods</h2>
+
   <div class="mod">
     <h3>🟣 Pearl Rider</h3>
-    <p>Ride an Ender Pearl and take your pearl movement experiments to the next level!</p>
+
+    <p data-i="description">
+      Ride an Ender Pearl and take your pearl movement experiments to the next level!
+    </p>
+
     <span class="tag">Fabric</span>
     <span class="tag">Minecraft 1.21.11</span>
-    <span class="tag">Movement</span>
-    <p class="status">Version 1.0.0 — Released!</p>
+    <span class="tag" data-i="movement">Movement</span>
+
+    <p class="status" data-i="status">Version 1.0.0 — Released!</p>
 
     <a class="download"
-       href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar">
+       href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar"
+       data-i="download">
        ⬇ Download Pearl Rider
     </a>
   </div>
 </section>
 
 <section class="section" id="about">
-  <h2>About Mods Site</h2>
-  <p>A Minecraft mod showcase created by mahanx18090.</p>
+  <h2 data-i="aboutTitle">About Mods Site</h2>
+  <p data-i="aboutText">
+    A Minecraft mod showcase created by mahanx18090.
+  </p>
 </section>
 
-<footer>
+<footer data-i="footer">
   © 2026 Mods Site | Created by mahanx18090
 </footer>
+
+<script>
+const translations = {
+  en: {
+    mods: "Mods",
+    about: "About",
+    hero: "Discover Your Next Minecraft Mod",
+    subtitle: "Explore amazing Minecraft mods made by creators.",
+    featured: "Featured Mods",
+    description: "Ride an Ender Pearl and take your pearl movement experiments to the next level!",
+    movement: "Movement",
+    status: "Version 1.0.0 — Released!",
+    download: "⬇ Download Pearl Rider",
+    aboutTitle: "About Mods Site",
+    aboutText: "A Minecraft mod showcase created by mahanx18090.",
+    footer: "© 2026 Mods Site | Created by mahanx18090"
+  },
+
+  fa: {
+    mods: "مودها",
+    about: "درباره ما",
+    hero: "مود بعدی ماینکرفت خودت را پیدا کن",
+    subtitle: "مودهای فوق‌العاده ماینکرفت را کشف کن.",
+    featured: "مودهای ویژه",
+    description: "سوار اندرپرل شو و تجربه حرکت با پرل را به سطح جدیدی ببر!",
+    movement: "حرکت",
+    status: "نسخه 1.0.0 — منتشر شده!",
+    download: "⬇ دانلود Pearl Rider",
+    aboutTitle: "درباره Mods Site",
+    aboutText: "نمایشگاهی از مودهای ماینکرفت ساخته شده توسط mahanx18090.",
+    footer: "© 2026 Mods Site | ساخته شده توسط mahanx18090"
+  },
+
+  fn: {
+    mods: "Mod Ha",
+    about: "Darbare Ma",
+    hero: "Mod-e Baadi Minecraft-et Ra Peyda Kon",
+    subtitle: "Mod-haye Fogholade Minecraft Ra Kashf Kon.",
+    featured: "Mod-haye Vizhe",
+    description: "Savare Ender Pearl Sho Va Tajrobe-ye Harekat Ba Pearl Ra Be Sateh-e Jadid Bebo!",
+    movement: "Harekat",
+    status: "Version 1.0.0 — Montasher Shode!",
+    download: "⬇ Download Pearl Rider",
+    aboutTitle: "Darbare Mods Site",
+    aboutText: "Namayeshgahi Az Mod-haye Minecraft, Sakht-e mahanx18090.",
+    footer: "© 2026 Mods Site | Sakht-e mahanx18090"
+  }
+};
+
+function setLanguage(lang) {
+  const words = translations[lang];
+
+  document.querySelectorAll("[data-i]").forEach(element => {
+    const key = element.dataset.i;
+    if (words[key]) {
+      element.textContent = words[key];
+    }
+  });
+
+  document.documentElement.lang = lang === "fa" ? "fa" : "en";
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  document.body.classList.toggle("rtl", lang === "fa");
+
+  document.querySelectorAll(".languages button").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  const buttons = document.querySelectorAll(".languages button");
+  const selected = lang === "en" ? 0 : lang === "fn" ? 1 : 2;
+  buttons[selected].classList.add("active");
+}
+</script>
+
 </body>
 </html>
