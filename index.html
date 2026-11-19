@@ -2,93 +2,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mods Site | Minecraft Mods</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #090710;
-      color: white;
-    }
-    header {
-      padding: 25px 8%;
-      border-bottom: 1px solid #292039;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo { color: #b76cff; font-size: 25px; font-weight: bold; }
-    nav a { color: #ddd; text-decoration: none; margin-left: 22px; }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: radial-gradient(ellipse, #35145b, #090710 70%);
-    }
-    .hero h1 { font-size: 48px; margin: 0 0 15px; }
-    .hero span { color: #bd78ff; }
-    .hero p { color: #c6bfd2; font-size: 17px; }
-    .section { padding: 45px 8%; }
-    .section h2 { color: #c58aff; }
-    .mod {
-      max-width: 650px;
-      padding: 28px;
-      background: #15111f;
-      border: 1px solid #57347b;
-      border-radius: 15px;
-    }
-    .mod h3 { font-size: 25px; }
-    .tag {
-      display: inline-block;
-      padding: 7px 12px;
-      margin: 5px;
-      border-radius: 20px;
-      background: #302044;
-      color: #d8b4ff;
-      font-size: 13px;
-    }
-    .status { color: #e5bd75; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #999;
-      border-top: 1px solid #292039;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mods Site | Minecraft Mods</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #090710;
+  color: white;
+}
+header {
+  padding: 24px 8%;
+  border-bottom: 1px solid #30203f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { color: #bd78ff; font-size: 25px; font-weight: bold; }
+nav a { color: #ddd; text-decoration: none; margin-left: 20px; }
+.hero {
+  text-align: center;
+  padding: 95px 20px;
+  background: radial-gradient(ellipse, #42166b, #090710 72%);
+}
+.hero h1 { font-size: 44px; }
+.hero span { color: #c58aff; }
+.hero p { color: #d0c5dc; }
+.section { padding: 45px 8%; }
+.section h2 { color: #c58aff; }
+.mod {
+  max-width: 650px;
+  padding: 28px;
+  background: #17111f;
+  border: 1px solid #7444a0;
+  border-radius: 16px;
+}
+.mod h3 { font-size: 26px; }
+.tag {
+  display: inline-block;
+  padding: 7px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  background: #302044;
+  color: #e0c4ff;
+  font-size: 13px;
+}
+.download {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 13px 22px;
+  background: #963cff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 9px;
+}
+.download:hover { background: #b46aff; }
+.status { color: #86e6a4; }
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  border-top: 1px solid #30203f;
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">MODS SITE</div>
-    <nav><a href="#mods">Mods</a><a href="#about">About</a></nav>
-  </header>
+<header>
+  <div class="logo">MODS SITE</div>
+  <nav>
+    <a href="#mods">Mods</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h1>Discover Your Next <span>Minecraft Mod</span></h1>
-    <p>Explore amazing mods made for Minecraft.</p>
-  </section>
+<section class="hero">
+  <h1>Discover Your Next <span>Minecraft Mod</span></h1>
+  <p>Explore amazing Minecraft mods made by creators.</p>
+</section>
 
-  <section class="section" id="mods">
-    <h2>Featured Mods</h2>
-    <div class="mod">
-      <h3>🟣 Pearl Rider</h3>
-      <p>Ride an Ender Pearl and take your pearl movement experiments to the next level.</p>
-      <span class="tag">Fabric</span>
-      <span class="tag">Minecraft 1.21.11</span>
-      <span class="tag">Movement</span>
-      <p class="status">Release coming soon</p>
-    </div>
-  </section>
+<section class="section" id="mods">
+  <h2>Featured Mods</h2>
+  <div class="mod">
+    <h3>🟣 Pearl Rider</h3>
+    <p>Ride an Ender Pearl and take your pearl movement experiments to the next level!</p>
+    <span class="tag">Fabric</span>
+    <span class="tag">Minecraft 1.21.11</span>
+    <span class="tag">Movement</span>
+    <p class="status">Version 1.0.0 — Released!</p>
 
-  <section class="section" id="about">
-    <h2>About Mods Site</h2>
-    <p>A Minecraft mod showcase created by mahanx18090.</p>
-  </section>
+    <a class="download"
+       href="https://github.com/mahanx1809-glitch/mods-site/releases/download/v1.0.0/PearlRider-1.0.0.jar">
+       ⬇ Download Pearl Rider
+    </a>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Mods Site | Created by mahanx18090
-  </footer>
+<section class="section" id="about">
+  <h2>About Mods Site</h2>
+  <p>A Minecraft mod showcase created by mahanx18090.</p>
+</section>
+
+<footer>
+  © 2026 Mods Site | Created by mahanx18090
+</footer>
 </body>
 </html>
-
